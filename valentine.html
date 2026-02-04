@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Lilia 🖤</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #2b0b17);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(18px);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 380px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+      transition: all 0.4s ease;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 30px;
+      line-height: 1.3;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      position: relative;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 14px 32px;
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.35s ease;
+    }
+
+    #yes {
+      background: linear-gradient(135deg, #ff4d9b, #ff2b63);
+      color: white;
+      z-index: 2;
+      box-shadow: 0 5px 15px rgba(255, 77, 155, 0.6);
+    }
+
+    #no {
+      background: #777;
+      color: black;
+      z-index: 1;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- IMAGE -->
+    <img src="photo.jpg" alt="Us 🖤">
+
+    <h1>Lilia Mikati<br>Will you be my Valentine?</h1>
+
+    <div class="buttons">
+      <button id="yes" onclick="yesClicked()">YES ❤️</button>
+      <button id="no" onclick="noClicked()">NO 😡</button>
+    </div>
+
+  </div>
+
+  <script>
+    let yesScale = 1;
+    let noScale = 1;
+    let noOffset = 0;
+
+    function noClicked() {
+      yesScale += 0.25;
+      noScale -= 0.2;
+      noOffset += 25;
+
+      if (noScale < 0.25) noScale = 0.25;
+
+      document.getElementById("yes").style.transform =
+        `scale(${yesScale})`;
+
+      document.getElementById("no").style.transform =
+        `scale(${noScale}) translateX(${noOffset}px)`;
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;background:#0a0a0a;color:white;text-align:center;">
+          <h1 style="font-size:32px;">❤️ I love you lilo ❤️</h1>
+          <p style="font-size:20px;">Lilia Boukhary</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
